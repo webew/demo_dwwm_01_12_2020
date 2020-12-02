@@ -44,3 +44,20 @@ navBar.addEventListener("mouseover", function (event) {
 navBar.addEventListener("mouseout", function (event) {
     event.target.style.backgroundColor = "transparent";
 });
+
+// gestion du clic sur les liens de la navBar
+navBar.addEventListener("click", function (event) {
+    // désactiver le comportement naturel du lien
+    event.preventDefault();
+
+    // masquer tous les articles
+    let articles = document.querySelectorAll("article");
+    articles.forEach((article) => {
+        article.style.display = "none";
+    });
+
+    // afficher l'article correspondant au lien
+    let linkHref = event.target.getAttribute("href"); // accueil
+    let articleCible = document.getElementById(linkHref);
+    articleCible.style.display = "block";
+});
