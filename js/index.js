@@ -34,6 +34,13 @@ header.appendChild(navBar);
 // on cible les éléments de type a => NodeList
 let menuLinks = document.querySelectorAll("a");
 // on boucle sur les liens
-menuLinks.forEach((element) => {
-    handleHover(element); // ajoute un gestionnaire d'événement à chaque lien
+// menuLinks.forEach((element) => {
+//     handleHover(element); // ajoute un gestionnaire d'événement à chaque lien
+// });
+// gestion du hover sur nav
+navBar.addEventListener("mouseover", function (event) {
+    event.target.style.backgroundColor = "#F27";
+});
+navBar.addEventListener("mouseout", function (event) {
+    event.target.style.backgroundColor = "transparent";
 });
